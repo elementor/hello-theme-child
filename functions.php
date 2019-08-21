@@ -1,11 +1,21 @@
-<?php 
+<?php
+/**
+ * Theme functions and definitions
+ *
+ * @package HelloElementorChild
+ */
 
+/**
+ * Load child theme css and optional scripts
+ *
+ * @return void
+ */
 function hello_elementor_child_enqueue_scripts() {
 	wp_enqueue_style(
-		'hello-elementor-child',
+		'hello-elementor-child-style',
 		get_stylesheet_directory_uri() . '/style.css',
 		[
-			'hello-elementor'
+			'hello-elementor',
 		],
 		'1.0.0'
 	);
