@@ -15,7 +15,7 @@ function hello_elementor_child_enqueue_scripts() {
 		'hello-elementor-child-style',
 		get_stylesheet_directory_uri() . '/style.css',
 		[
-			'hello-elementor',
+			'hello-elementor-theme-style',
 		],
 		'1.0.0'
 	);
