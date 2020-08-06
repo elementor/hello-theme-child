@@ -1,0 +1,9 @@
+body {
+    font-smooth: always;
+    direction:ltr;
+    line-height: 1.5;
+    unicode-bidi: embed;
+}
+body > div {
+    direction:rtl !important;
+}
