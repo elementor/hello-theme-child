@@ -39,6 +39,11 @@ function hello_child_register_required_plugins() {
 	 */
 	$plugins = array(
 		array(
+			'name'     => 'Elementor Website Builder',
+			'slug'     => 'elementor',
+			'required' => false,
+		),
+		array(
 			'name'     => 'Smush – Compress, Optimize and Lazy Load Images',
 			'slug'     => 'wp-smushit',
 			'required' => false,
