@@ -13,5 +13,12 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 */
 
 /*
-    Add your custom styles here
-*/
+ * General Styles
+ */
+ svg{
+    width: 100%;
+}
+svg, path, polygon, polyline, rect{
+    transition: all ease-in-out .3s;
+}
+/* End General Styles */
