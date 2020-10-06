@@ -21,4 +21,7 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 svg, path, polygon, polyline, rect{
     transition: all ease-in-out .3s;
 }
+a, a i, i{
+    transition: all ease-in-out .3s;
+}
 /* End General Styles */
