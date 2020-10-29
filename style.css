@@ -24,4 +24,13 @@ svg, path, polygon, polyline, rect{
 a, a i, i{
     transition: all ease-in-out .3s;
 }
+/* fixes anchor offset */
+body:not(.elementor-editor-active) .elementor-menu-anchor:before {
+    content: "";
+    display:block;
+    height: 100px; /* fixed header height*/
+    margin: -100px 0 0; /* negative fixed header height */
+    visibility: hidden;
+    pointer-events: none;
+}
 /* End General Styles */
