@@ -20,4 +20,5 @@ function hello_elementor_child_enqueue_scripts() {
 		'1.0.0'
 	);
 }
+
 add_action( 'wp_enqueue_scripts', 'hello_elementor_child_enqueue_scripts', PHP_INT_MAX );
