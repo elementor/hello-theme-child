@@ -1,6 +1,6 @@
 <?php
 //class to load all acf assets
-  class ACF{
+  class HEACF{
 
     public static function init(){
       foreach(glob(get_stylesheet_directory() . '/inc/acf/*.php') as $filename){
@@ -10,4 +10,4 @@
 
 
   }
-ACF::init();
+HEACF::init();
