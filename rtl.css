@@ -4,6 +4,6 @@ body {
     line-height: 1.5;
     unicode-bidi: embed;
 }
-body > div {
+body > * {
     direction:rtl !important;
 }
