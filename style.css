@@ -15,5 +15,5 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 /*
     Add your custom styles here
 */
-
-.test {}
+@media only screen and (max-width: 1024px) {}
+@media only screen and (max-width: 767px) {}
