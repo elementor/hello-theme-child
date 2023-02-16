@@ -6,9 +6,7 @@ This theme is produced for [Creative Bananas'](https://creativebananas.com) Proj
 
 # THEMETATION
 
-## Additional jQuery Plugins
-
-- ### [Linkify](https://www.jqueryscript.net/text/jQuery-Plugin-To-Transform-URLs-In-Text-Into-Links-linkify.html)
+### [Linkify](https://www.jqueryscript.net/text/jQuery-Plugin-To-Transform-URLs-In-Text-Into-Links-linkify.html)
 **Add this code below jQuery Enqueue**
 > wp_enqueue_script('cb-linkify-js', get_stylesheet_directory_uri() .'/js/linkify.min.js', array(), $ver, true);
 > wp_enqueue_script('cb-linkify-jquery', get_stylesheet_directory_uri() .'/js/jquery.linkify.min.js', array(), $ver, true);
@@ -16,6 +14,4 @@ This theme is produced for [Creative Bananas'](https://creativebananas.com) Proj
 **Add this code in script.js** 
 > $("selector").linkify();
 
-## Sliders
-
-- ### [Slick](https://kenwheeler.github.io/slick/)
+### [Slick](https://kenwheeler.github.io/slick/)
