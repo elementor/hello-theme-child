@@ -4,7 +4,7 @@ Contributors: [Elron Naranja](https://elronnaranja.com), Jermaine Lorenzo
 
 This theme is produced for [Creative Bananas'](https://creativebananas.com) Projects.
 
-# THEMETATION
+# Plugins
 
 ### [Linkify](https://www.jqueryscript.net/text/jQuery-Plugin-To-Transform-URLs-In-Text-Into-Links-linkify.html)
 **Add this code below jQuery Enqueue**
@@ -20,15 +20,18 @@ $("selector").linkify();
 
 ### [Slick](https://kenwheeler.github.io/slick/)
 
-# THEMETATION
+# jQuery Hacks 
 
 ### [READ MORE/READ LESS]
 
 **HTML Structure**
 ```
 <div>
-This is the active/visible content. 
-<div class="read-more"> <span> This is the hidden content that'll show when the Read More is triggered. </span><a class="read-more-button" href="#!">READ MORE</a></div>
+	This is the active/visible content. 
+	<div class="read-more"> 
+		<span>This is the hidden content that'll show when the Read More is triggered.</span>
+		<a class="read-more-button" href="#!">READ MORE</a>
+	</div>
 </div>
 ```
 
@@ -52,6 +55,8 @@ $(".read-more").each(function(){
 ```
 
 **Style**
+```
 .read-more {
 	display: inline;
 }
+```
