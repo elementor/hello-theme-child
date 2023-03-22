@@ -19,3 +19,39 @@ $("selector").linkify();
 ```
 
 ### [Slick](https://kenwheeler.github.io/slick/)
+
+# THEMETATION
+
+### [READ MORE/READ LESS]
+
+**HTML Structure**
+```
+<div>
+This is the active/visible content. 
+<div class="read-more"> <span> This is the hidden content that'll show when the Read More is triggered. </span><a class="read-more-button" href="#!">READ MORE</a></div>
+</div>
+```
+
+**Script**
+```
+$(".read-more").each(function(){
+	// This hides the span
+	$(this).find("span").hide();
+	$(this).find(".read-more-button").click(function(){
+		// Handles the toggle HIDE/SHOW
+		$(this).prev("span").slideToggle();
+		
+		// Changes READ MORE to READ LESS
+		if ($(this).text() == "READ MORE") {
+			$(this).text("READ LESS")
+		} else {
+			$(this).text("READ MORE")
+		}
+	});
+});
+```
+
+**Style**
+.read-more {
+	display: inline;
+}
