@@ -63,10 +63,11 @@ $(".read-more").each(function(){
 
 ### [SPLIT/WRAP TEXT]
 ```
-//
-$('#selector').html(function(i, v){
-	// Colon(:) is the trigger. The wrap will show after the Color(:)
-	var html = v.split(':');
+// Initial HTML <div>This is a text & span</div>
+// Result <div>This is a text & <span>span</span></div>
+$('div').html(function(i, v){
+	// Ampersand(&) is the trigger. The wrap will show after the ampersand(&)
+	var html = v.split('&');
 	return html[0] + ': ' + '<span>' + html[1] + '</span>';
 });
 ```
