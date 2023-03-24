@@ -77,4 +77,4 @@ $('div').html(function(i, v){
 });
 ```
 
-## Functions
+# Functions
