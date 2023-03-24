@@ -19,6 +19,11 @@ $("selector").linkify();
 ```
 
 ### [Slick](https://kenwheeler.github.io/slick/)
+**Add this code below jQuery Enqueue**
+```
+wp_enqueue_script('cb-slick-js', get_stylesheet_directory_uri() .'/js/slick.min.js', array(), $ver, true);
+```
+**Copy the code in slick.css to style.css**
 
 # jQuery Hacks 
 
