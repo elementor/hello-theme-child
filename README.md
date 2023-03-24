@@ -60,3 +60,13 @@ $(".read-more").each(function(){
 	display: inline;
 }
 ```
+
+### [SPLIT/WRAP TEXT]
+```
+//
+$('#selector').html(function(i, v){
+	// Colon(:) is the trigger. The wrap will show after the Color(:)
+	var html = v.split(':');
+	return html[0] + ': ' + '<span>' + html[1] + '</span>';
+});
+```
