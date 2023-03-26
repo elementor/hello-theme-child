@@ -36,6 +36,8 @@ wp_enqueue_script('cb-slick-js', get_stylesheet_directory_uri() .'/js/slick.min.
 	- ID = Use the label used in the WP menu trigger. E.g "Services".
 	- Note: This is CASE SENSITIVE. If you capitalize the S in Services, make sure to Capitalize it in ID field of the elementor section too.
 
+Notes: It might appear to be buggy when you don't have anything on page except the header & menu. It doesn't hide the menu but only "z-index: -1" which make it still hoverable if there are no other sections on the page to cover it.
+
 **Script**
 ```
 // Mega Menu
@@ -61,6 +63,7 @@ $("li.mega-menu").each(function(){
 		$("#"+menuClass).addClass("active");
 	}, function() {
 		hoverTimeout = setTimeout(function() {
+			$("li.mega-menu a").removeClass("active");
 			$("section.mega-menu").removeClass("active");
 		}, 500);
 	});
