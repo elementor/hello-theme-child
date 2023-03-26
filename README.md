@@ -27,6 +27,61 @@ wp_enqueue_script('cb-slick-js', get_stylesheet_directory_uri() .'/js/slick.min.
 
 # jQuery Hacks 
 
+### [MEGA MENU]
+**How to set up**
+1. Create a WP Menu.
+2. Add a class to specific trigger "mega-menu"
+3. Create a section for mega menu
+	- class = "mega-menu"
+	- ID = Use the label used in the WP menu. E.g "Services".
+	- Note: This is CASE SENSITIVE. If you capitalize the S in Services, make sure to Capitalize it in ID field of the elementor section too.
+**Script**
+```
+// Mega Menu
+// SET timeout variable to CLEAR it.
+var hoverTimeout;
+$("li.mega-menu").each(function(){
+	// Variable the menu label as selector
+	var menuClass = $(this).text();
+	$(this).hover(function() {
+		clearTimeout(hoverTimeout);
+		// Add active to menu trigger to preserved hovered state
+		$(this).find("a").addClass("active");
+		$("#"+menuClass).addClass("active");
+	}, function() {
+		hoverTimeout = setTimeout(function() {
+			$("li.mega-menu a").removeClass("active");
+			$("section.mega-menu").removeClass("active");
+		}, 500);
+	});
+	// Preserve the hover on mega menu container
+	$("section.mega-menu").hover(function() {
+		clearTimeout(hoverTimeout);
+		$("#"+menuClass).addClass("active");
+	}, function() {
+		hoverTimeout = setTimeout(function() {
+			$("section.mega-menu").removeClass("active");
+		}, 500);
+	});
+});
+```
+**Style**
+```
+section.mega-menu {
+	position: absolute;
+    top: 0;
+    width: 100%;
+    display: block;
+    opacity: 0;
+    transition: .3s;
+    z-index: -1;
+}
+section.mega-menu.active {
+	opacity: 1;
+	z-index: 10;
+}
+```
+
 ### [READ MORE/READ LESS]
 
 **HTML Structure**
