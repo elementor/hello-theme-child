@@ -35,6 +35,7 @@ wp_enqueue_script('cb-slick-js', get_stylesheet_directory_uri() .'/js/slick.min.
 	- class = "mega-menu"
 	- ID = Use the label used in the WP menu. E.g "Services".
 	- Note: This is CASE SENSITIVE. If you capitalize the S in Services, make sure to Capitalize it in ID field of the elementor section too.
+
 **Script**
 ```
 // Mega Menu
