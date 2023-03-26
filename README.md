@@ -72,17 +72,17 @@ $("li.mega-menu").each(function(){
 **Style**
 ```
 section.mega-menu {
-position: absolute;
-top: 0;
-width: 100%;
-display: block;
-opacity: 0;
-transition: .3s;
-z-index: -1;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	display: block;
+	opacity: 0;
+	transition: .3s;
+	z-index: -1;
 }
 section.mega-menu.active {
-opacity: 1;
-z-index: 10;
+	opacity: 1;
+	z-index: 10;
 }
 ```
 
@@ -121,7 +121,7 @@ $(".read-more").each(function(){
 **Style**
 ```
 .read-more {
-display: inline;
+	display: inline;
 }
 ```
 
