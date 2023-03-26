@@ -42,30 +42,24 @@ Notes: It might appear to be buggy when you don't have anything on page except t
 ```
 // Mega Menu
 // SET timeout variable to CLEAR it.
-var hoverTimeout;
 $("li.mega-menu").each(function(){
 	// Variable the menu label as selector
 	var menuClass = $(this).text();
 	$(this).hover(function() {
-		clearTimeout(hoverTimeout);
 		// Add active to menu trigger to preserved hovered state
 		$(this).find("a").addClass("active");
 		$("#"+menuClass).addClass("active");
 	}, function() {
-		hoverTimeout = setTimeout(function() {
-			$("li.mega-menu a").removeClass("active");
-			$("section.mega-menu").removeClass("active");
-		}, 500);
+		$(this).find("a").removeClass("active");
+		$("#"+menuClass).removeClass("active");
 	});
 	// Preserve the hover on mega menu container
-	$("section.mega-menu").hover(function() {
-		clearTimeout(hoverTimeout);
-		$("#"+menuClass).addClass("active");
+	$("#"+menuClass).hover(function() {
+		$(this).addClass("active");
+		$("li.mega-menu a:contains("+menuClass+")").addClass("active");
 	}, function() {
-		hoverTimeout = setTimeout(function() {
-			$("li.mega-menu a").removeClass("active");
-			$("section.mega-menu").removeClass("active");
-		}, 500);
+		$(this).removeClass("active");
+		$("li.mega-menu a:contains("+menuClass+")").removeClass("active");
 	});
 });
 ```
@@ -77,7 +71,7 @@ section.mega-menu {
 	width: 100%;
 	display: block;
 	opacity: 0;
-	transition: .3s;
+	transition: .3s !important;
 	z-index: -1;
 }
 section.mega-menu.active {
