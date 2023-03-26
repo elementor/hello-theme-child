@@ -30,10 +30,10 @@ wp_enqueue_script('cb-slick-js', get_stylesheet_directory_uri() .'/js/slick.min.
 ### [MEGA MENU]
 **How to set up**
 1. Create a WP Menu.
-2. Add a class to specific trigger "mega-menu"
-3. Create a section for mega menu
-	- class = "mega-menu"
-	- ID = Use the label used in the WP menu. E.g "Services".
+2. Add a class "mega-menu" to specific menu item as trigger. 
+3. Create an elementor section as your mega menu with class and ID.
+	- class = mega-menu
+	- ID = Use the label used in the WP menu trigger. E.g "Services".
 	- Note: This is CASE SENSITIVE. If you capitalize the S in Services, make sure to Capitalize it in ID field of the elementor section too.
 
 **Script**
