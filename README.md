@@ -130,4 +130,40 @@ $('div').html(function(i, v){
 });
 ```
 
+# Elementor Manipulations
+
+### [ACCORDION ON HOVER]
+
+**Instructions**
+1. Create an accordion in Elementor.
+2. Add a <code>class</code> active-hover
+
+**Script**
+```
+// Elementor Accordion
+$(".active-hover .elementor-accordion-item").on("mouseenter click", function() {
+	$(this).find(".elementor-tab-title").addClass("elementor-active");
+	$(this).find(".elementor-tab-content").addClass("elementor-active");
+	$(this).find(".elementor-tab-content").stop().slideDown("slow");
+	// Slide off on others
+	$(this).siblings().find(".elementor-tab-title").removeClass("elementor-active");
+	$(this).siblings().find(".elementor-tab-content").removeClass("elementor-active");
+	$(this).siblings().find(".elementor-tab-content").stop().slideUp("slow");
+});
+```
+
+This code will reset the first child as active state.
+```
+// Reset to first child active
+$(".active-hover .elementor-accordion").on("mouseleave", function() {
+	$(this).find(".elementor-accordion-item:first-child .elementor-tab-title").addClass("elementor-active");
+	$(this).find(".elementor-accordion-item:first-child .elementor-tab-content").addClass("elementor-active");
+	$(this).find(".elementor-accordion-item:first-child .elementor-tab-content").stop().slideDown("slow");
+	// Slide off on others
+	$(this).find(".elementor-accordion-item:first-child").siblings().find(".elementor-tab-title").removeClass("elementor-active");
+	$(this).find(".elementor-accordion-item:first-child").siblings().find(".elementor-tab-content").removeClass("elementor-active");
+	$(this).find(".elementor-accordion-item:first-child").siblings().find(".elementor-tab-content").stop().slideUp("slow");
+});
+```
+
 # Functions
