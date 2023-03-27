@@ -31,7 +31,7 @@ wp_enqueue_script('cb-slick-js', get_stylesheet_directory_uri() .'/js/slick.min.
 **How to set up**
 1. Create a WP Menu.
 2. Add a <code>class</code> "mega-menu" to specific menu item as trigger. 
-3. Create an elementor section as your mega menu with class and <code>ID</code>.
+3. Create an elementor section as your mega menu with <code>class</code> and <code>ID</code>.
 	- <code>class</code> = mega-menu
 	- <code>ID</code> = Use the label used in the WP menu trigger. E.g "Services".
 	- Note: This is CASE SENSITIVE. If you capitalize the S in Services, make sure to Capitalize it in <code>ID</code> field of the elementor section too.
@@ -136,7 +136,7 @@ $('div').html(function(i, v){
 
 **Instructions**
 1. Create an accordion in Elementor.
-2. Add a <code>class</code> active-hover
+2. Add "active-hover" <code>class</code>  in the accordion.
 
 **Script**
 ```
