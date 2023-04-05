@@ -65,7 +65,7 @@ $("li.mega-menu").each(function(){
 ```
 **Style**
 ```
-section.mega-menu {
+.mega-menu {
 	position: absolute;
 	top: 0;
 	width: 100%;
@@ -74,7 +74,7 @@ section.mega-menu {
 	transition: .3s !important;
 	z-index: -1;
 }
-section.mega-menu.active {
+.mega-menu.active {
 	opacity: 1;
 	z-index: 10;
 }
