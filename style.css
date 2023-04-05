@@ -12,9 +12,9 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
 */
 
-/*
-    Add your custom styles here
-*/
+/***********************************************************/
+/** RESET **************************************************/
+/***********************************************************/
 
 @media only screen and (max-width: 1024px) {}
 @media only screen and (max-width: 767px) {}
