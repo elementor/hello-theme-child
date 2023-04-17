@@ -1,8 +1,8 @@
 === Hello Elementor Child ===
 
 Contributors: elemntor, KingYes, ariel.k, jzaltzberg, mati1000, bainternet
-Requires at least: 4.7
-Tested up to: 5.4
+Requires at least: 5.9
+Tested up to: 6.2
 Stable tag: 1.0.0
 Version: 1.0.1
 Requires PHP: 5.4
