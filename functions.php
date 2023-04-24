@@ -5,6 +5,9 @@
  * @package HelloElementorChild
  */
 
+// Version of child theme
+define( 'HELLO_ELEMENTOR_CHILD_VERSION', '1.0.0' );
+
 /**
  * Load child theme css and optional scripts
  *
@@ -17,7 +20,7 @@ function hello_elementor_child_enqueue_scripts() {
 		[
 			'hello-elementor-theme-style',
 		],
-		'1.0.0'
+		HELLO_ELEMENTOR_CHILD_VERSION
 	);
 }
 add_action( 'wp_enqueue_scripts', 'hello_elementor_child_enqueue_scripts', 20 );
