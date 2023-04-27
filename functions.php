@@ -1,19 +1,28 @@
 <?php
 /**
- * Theme functions and definitions
+ * Theme functions and definitions.
+ *
+ * For additional information on potential customization options,
+ * read the developers' documentation:
+ *
+ * https://developers.elementor.com/docs/hello-elementor-theme/
  *
  * @package HelloElementorChild
  */
 
-// Version of child theme
-define( 'HELLO_ELEMENTOR_CHILD_VERSION', '1.0.0' );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+define( 'HELLO_ELEMENTOR_CHILD_VERSION', '2.0.0' );
 
 /**
- * Load child theme css and optional scripts
+ * Load child theme scripts & styles.
  *
  * @return void
  */
-function hello_elementor_child_enqueue_scripts() {
+function hello_elementor_child_scripts_styles() {
+
 	wp_enqueue_style(
 		'hello-elementor-child-style',
 		get_stylesheet_directory_uri() . '/style.css',
@@ -22,5 +31,6 @@ function hello_elementor_child_enqueue_scripts() {
 		],
 		HELLO_ELEMENTOR_CHILD_VERSION
 	);
+
 }
-add_action( 'wp_enqueue_scripts', 'hello_elementor_child_enqueue_scripts', 20 );
+add_action( 'wp_enqueue_scripts', 'hello_elementor_child_scripts_styles', 20 );

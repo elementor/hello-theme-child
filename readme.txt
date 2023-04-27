@@ -3,52 +3,33 @@
 Contributors: elemntor, KingYes, ariel.k, jzaltzberg, mati1000, bainternet
 Requires at least: 5.9
 Tested up to: 6.2
-Stable tag: 1.0.0
-Version: 1.0.1
-Requires PHP: 5.4
+Stable tag: 2.0.0
+Version: 2.0.0
+Requires PHP: 5.6
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
 
 The Hello Elementor Child Theme is a starter blank child theme for [Hello Elementor](https://wordpress.org/themes/hello-elementor/) theme.
 
-***Hello Elementor*** is distributed under the terms of the GNU GPL v3 or later.
-
 == Description ==
 
-A basic, plain-vanilla, lightweight theme, best suited for building your site using Elementor page builder.
+Hello Elementor Child is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor page builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website.
 
-This theme resets the WordPress environment and prepares it for smooth operation of Elementor.
+The theme's main focus is on providing a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. It is optimized for speed and performance, and its simplicity and flexibility make it a great choice for both beginners and experienced website designers.
 
-Screenshot's images & icons are licensed under: Creative Commons (CC0), https://creativecommons.org/publicdomain/zero/1.0/legalcode
+The theme supports common WordPress features which can be extended using a child-theme. In addition, there are several ways to add custom styles. It can be done from **Elementor**, from the WordPress customizer, using a child-theme, or with an external plugin. To customize the theme further, visit [Elementor developers docs](https://developers.elementor.com/docs/hello-elementor-theme/).
 
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the 'Add New' button.
-2. Click 'Upload theme' and upload the zipped child
+2. Click 'Upload theme' and upload the zipped child.
 3. Click on the 'Activate' button to use your new theme right away.
 4. Navigate to Elementor and start building your site.
 
-== Customizations ==
-
-Most users will not need to edit the files for customizing this theme.
-To customize your site's appearance, simply use ***Elementor***.
-
-However, if you have a particular need to adapt this theme, please read on.
-
-== Frequently Asked Questions ==
-
-**Does this theme support any plugins?**
-
-Hello Elementor includes support for WooCommerce.
-
-**Can Font Styles be added thru the theme's css file?**
-
-Yes, ***but*** best practice is to use the styling capabilities in the Elementor plugin.
-
 == Copyright ==
 
-This theme, like WordPress, is licensed under the GPL.
+This theme, like WordPress, is distributed under the terms of GPL.
 Use it as your springboard to building a site with ***Elementor***.
 
 Hello Elementor bundles the following third-party resources:
@@ -63,5 +44,14 @@ Source: https://stocksnap.io/photo/4B83RD7BV9
 
 == Changelog ==
 
+= 2.0.0 - 2023-04-27 =
+* Load child theme stylesheet after parent theme stylesheet
+* Added a constant for better version management
+* Prevent direct access to `functions.php`
+* Optimize screenshot image
+* Update `Requires at least: 5.9`
+* Update `Tested up to: 6.2`
+* Update `Theme URI` link
+
 = 1.0.0 - 2019-05-23 =
-* Initial Public Release
+* Initial public release
