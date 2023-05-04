@@ -30,7 +30,7 @@ wp_enqueue_script('cb-slick-js', get_stylesheet_directory_uri() .'/js/slick.min.
 ### [MEGA MENU]
 **How to set up**
 1. Create a WP Menu.
-2. Add a <code>class</code> "mega-menu" to specific menu item as trigger. 
+2. Add a <code>class</code> "mega-menu prevented" to specific menu item as trigger. 
 3. Create an elementor section as your mega menu with <code>class</code> and <code>ID</code>.
 	- <code>class</code> = mega-menu
 	- <code>ID</code> = Use the label used in the WP menu trigger. E.g "Services".
@@ -61,6 +61,16 @@ $("li.mega-menu").each(function(){
 		$(this).removeClass("active");
 		$("li.mega-menu a:contains("+menuClass+")").removeClass("active");
 	});
+	//// Prevent going to URL on first click on Touch Devices
+		$(this).on("touch", function(e) {
+			if($(this).hasClass("prevented")) {
+				event.preventDefault();
+				$(this).removeClass("prevented");
+			} else {
+				$(this).addClass("prevented");
+				$(this).unbind("click");
+			}
+		});
 });
 ```
 **Style**
