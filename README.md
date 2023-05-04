@@ -33,18 +33,18 @@ wp_enqueue_script('cb-slick-js', get_stylesheet_directory_uri() .'/js/slick.min.
 2. Add a <code>class</code> "mega-menu prevented" to specific menu item as trigger. 
 3. Create an elementor section as your mega menu with <code>class</code> and <code>ID</code>.
 	- <code>class</code> = mega-menu
-	- <code>ID</code> = Use the label used in the WP menu trigger. E.g "Services".
-	- Note: This is CASE SENSITIVE. If you capitalize the S in Services, make sure to Capitalize it in <code>ID</code> field of the elementor section too.
+	- <code>ID</code> = Use the label used in the WP menu trigger. E.g "Main Services" = "main-services".
 
 Notes: It might appear to be buggy when you don't have anything on page except the header & menu. It doesn't hide the menu but only "z-index: -1" which make it still hoverable if there are no other sections on the page to cover it.
 
 **Script**
 ```
 // Mega Menu
-// SET timeout variable to CLEAR it.
 $("li.mega-menu").each(function(){
 	// Variable the menu label as selector
-	var menuClass = $(this).text();
+	var menuClass = $(this).find("a")[0].childNodes[0].nodeValue.trim();
+	menuClass = menuClass.replace(/\s+/g, '-').toLowerCase();
+
 	$(this).hover(function() {
 		// Add active to menu trigger to preserved hovered state
 		$(this).find("a").addClass("active");
@@ -62,15 +62,15 @@ $("li.mega-menu").each(function(){
 		$("li.mega-menu a:contains("+menuClass+")").removeClass("active");
 	});
 	//// Prevent going to URL on first click on Touch Devices
-		$(this).on("touch", function(e) {
-			if($(this).hasClass("prevented")) {
-				event.preventDefault();
-				$(this).removeClass("prevented");
-			} else {
-				$(this).addClass("prevented");
-				$(this).unbind("click");
-			}
-		});
+	$(this).on("touch", function(e) {
+		if($(this).hasClass("prevented")) {
+			event.preventDefault();
+			$(this).removeClass("prevented");
+		} else {
+			$(this).addClass("prevented");
+			$(this).unbind("click");
+		}
+	});
 });
 ```
 **Style**
@@ -87,6 +87,14 @@ section.mega-menu {
 section.mega-menu.active {
 	opacity: 1;
 	z-index: 10;
+}
+#menu-main li.mega-menu a:hover:before {
+	content: '';
+	height: 20px; //Height of the distance from <a> to mega-menu
+	width: 300vw;
+	left: -100vw;
+	position: absolute;
+	top: 100%;
 }
 ```
 
