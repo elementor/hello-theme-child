@@ -1,6 +1,6 @@
 === Hello Elementor Child ===
 
-Contributors: elemntor, KingYes, ariel.k, jzaltzberg, mati1000, bainternet
+Contributors: elementor, KingYes, ariel.k, jzaltzberg, mati1000, bainternet
 Requires at least: 5.9
 Tested up to: 6.2
 Stable tag: 2.0.0
