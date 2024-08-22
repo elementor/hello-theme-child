@@ -1,10 +1,10 @@
 === Hello Elementor Child ===
 
-Contributors: elemntor, KingYes, ariel.k, jzaltzberg, mati1000, bainternet
+Contributors: elemntor, KingYes, ariel.k, jzaltzberg, mati1000, bainternet, ludwigyou
 Requires at least: 5.9
-Tested up to: 6.2
-Stable tag: 2.0.0
-Version: 2.0.0
+Tested up to: 6.6
+Stable tag: 3.0.0
+Version: 3.0.0
 Requires PHP: 5.6
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -43,6 +43,10 @@ License: CC0 1.0 Universal (CC0 1.0)
 Source: https://stocksnap.io/photo/4B83RD7BV9
 
 == Changelog ==
+
+= 3.0.0 - 2024-08-22 =
+* Get version from wp_get_theme() data
+* Tested up to WordPress 6.6
 
 = 2.0.0 - 2023-04-27 =
 * Load child theme stylesheet after parent theme stylesheet
