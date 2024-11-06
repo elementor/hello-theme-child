@@ -15,7 +15,7 @@
 <!--    existing user on the site or to create a new user. -->
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
-<!-- generator="WordPress/6.4.2" created="2023-12-20 14:27" -->
+<!-- generator="WordPress/6.6.2" created="2024-11-06 20:55" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -24,24 +24,24 @@
 	xmlns:wp="http://wordpress.org/export/1.2/"
 >
 	<channel>
-		<title>Elementor Default</title>
-		<link>https://cb-stage.com/default-kit</link>
-		<description>Elementor Default</description>
-		<pubDate>Wed, 20 Dec 2023 14:27:10 +0000</pubDate>
+		<title>Defaults</title>
+		<link>https://cb-stage.com/default</link>
+		<description>Wordpress Defaults [Elementor]</description>
+		<pubDate>Wed, 06 Nov 2024 20:55:12 +0000</pubDate>
 		<language>en-US</language>
 		<wp:wxr_version>1.2</wp:wxr_version>
-		<wp:base_site_url>https://cb-stage.com/default-kit</wp:base_site_url>
-		<wp:base_blog_url>https://cb-stage.com/default-kit</wp:base_blog_url>
+		<wp:base_site_url>https://cb-stage.com/default</wp:base_site_url>
+		<wp:base_blog_url>https://cb-stage.com/default</wp:base_blog_url>
 		
 				<wp:author>
 			<wp:author_id>1</wp:author_id>
-			<wp:author_login><![CDATA[ci2pg]]></wp:author_login>
+			<wp:author_login><![CDATA[cb-defaults]]></wp:author_login>
 			<wp:author_email><![CDATA[admin@cb-stage.com]]></wp:author_email>
-			<wp:author_display_name><![CDATA[ci2pg]]></wp:author_display_name>
+			<wp:author_display_name><![CDATA[cb-defaults]]></wp:author_display_name>
 			<wp:author_first_name><![CDATA[]]></wp:author_first_name>
 			<wp:author_last_name><![CDATA[]]></wp:author_last_name>
 		</wp:author>
-<generator>https://wordpress.org/?v=6.4.2</generator>
+<generator>https://wordpress.org/?v=6.6.2</generator>
 
 	</channel>
 </rss>

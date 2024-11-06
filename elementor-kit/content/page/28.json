@@ -1,0 +1,131 @@
+{
+  "content": [
+    {
+      "id": "94c6c5b",
+      "settings": {
+        "flex_direction": "column",
+        "flex_gap": {
+          "column": "",
+          "row": "",
+          "isLinked": true,
+          "unit": "px",
+          "size": null
+        }
+      },
+      "elements": [
+        {
+          "id": "74d9b259",
+          "settings": {
+            "editor": "<p>Page title / H1</p><h1>Lorem ipsum dolor sit amet.</h1>"
+          },
+          "elements": [],
+          "isInner": false,
+          "widgetType": "text-editor",
+          "elType": "widget"
+        },
+        {
+          "id": "60b69e34",
+          "settings": {
+            "editor": "<p>Page Headlines/ H2</p><h2>Lorem ipsum dolor sit amet.</h2>"
+          },
+          "elements": [],
+          "isInner": false,
+          "widgetType": "text-editor",
+          "elType": "widget"
+        },
+        {
+          "id": "1a132103",
+          "settings": {
+            "editor": "<p>Module Headlines/ H3</p><h3>Lorem ipsum dolor sit amet.</h3>"
+          },
+          "elements": [],
+          "isInner": false,
+          "widgetType": "text-editor",
+          "elType": "widget"
+        },
+        {
+          "id": "17bde2ef",
+          "settings": {
+            "editor": "<p>H4</p><h4>Lorem ipsum dolor sit amet.</h4>"
+          },
+          "elements": [],
+          "isInner": false,
+          "widgetType": "text-editor",
+          "elType": "widget"
+        },
+        {
+          "id": "51f8a2e2",
+          "settings": {
+            "editor": "<p>H5</p><h5>Lorem ipsum dolor sit amet.</h5>"
+          },
+          "elements": [],
+          "isInner": false,
+          "widgetType": "text-editor",
+          "elType": "widget"
+        },
+        {
+          "id": "289216ba",
+          "settings": {
+            "editor": "<p>H6</p><h6>Lorem ipsum dolor sit amet.</h6>"
+          },
+          "elements": [],
+          "isInner": false,
+          "widgetType": "text-editor",
+          "elType": "widget"
+        },
+        {
+          "id": "3f7712e7",
+          "settings": {
+            "editor": "<p>Lead In Text</p>",
+            "__globals__": {
+              "typography_typography": "globals/typography?id=f261652"
+            }
+          },
+          "elements": [],
+          "isInner": false,
+          "widgetType": "text-editor",
+          "elType": "widget"
+        },
+        {
+          "id": "50222592",
+          "settings": {
+            "editor": "<p>Paragraph Text</p>",
+            "__globals__": {
+              "typography_typography": "globals/typography?id=3ab9a6b"
+            }
+          },
+          "elements": [],
+          "isInner": false,
+          "widgetType": "text-editor",
+          "elType": "widget"
+        },
+        {
+          "id": "7ab7ba2c",
+          "settings": {
+            "text": "Button Text",
+            "typography_typography": "custom",
+            "typography_font_size_mobile": {
+              "unit": "px",
+              "size": 16,
+              "sizes": []
+            },
+            "typography_line_height_mobile": {
+              "unit": "em",
+              "size": 1.2,
+              "sizes": []
+            },
+            "__globals__": { "typography_typography": "" }
+          },
+          "elements": [],
+          "isInner": false,
+          "widgetType": "button",
+          "elType": "widget"
+        }
+      ],
+      "isInner": false,
+      "elType": "container"
+    }
+  ],
+  "settings": { "template": "elementor_header_footer", "hide_title": "yes" },
+  "metadata": []
+}
