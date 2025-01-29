@@ -1,0 +1,86 @@
+name: Release Workflow
+
+# To create a new release and tag, increment the version number in:
+# - style.css
+# - functions.php
+# - readme.txt (both version and stable tag here!)
+# and push to master.
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-release:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Check Version Numbers
+      run: |
+        STYLE_CSS="style.css"
+        FUNCTIONS_PHP="functions.php"
+        README_TXT="readme.txt"
+        STYLE_VERSION_LINE=$(grep -e 'Version:' $STYLE_CSS)
+        CURRENT_VERSION=$(echo $STYLE_VERSION_LINE | grep -oP '\d+\.\d+\.\d+')
+        FUNCTIONS_VERSION_LINE=$(grep -e "define( 'HELLO_ELEMENTOR_CHILD_VERSION'," $FUNCTIONS_PHP)
+        CURRENT_FUNCTIONS_VERSION=$(echo $FUNCTIONS_VERSION_LINE | grep -oP '\d+\.\d+\.\d+')
+        README_VERSION_LINE=$(grep -e 'Version:' $README_TXT)
+        README_STABLE_TAG_LINE=$(grep -e 'Stable tag:' $README_TXT)
+        README_CURRENT_VERSION=$(echo $README_VERSION_LINE | grep -oP '\d+\.\d+\.\d+')
+        README_STABLE_TAG=$(echo $README_STABLE_TAG_LINE | grep -oP '\d+\.\d+\.\d+')
+        if [ "$README_CURRENT_VERSION" != "$README_STABLE_TAG" ]; then
+            echo "Stable tag in readme.txt does not match version number. They should match to create a tag and release."
+            echo "Version: $README_CURRENT_VERSION"
+            echo "Stable tag: $README_STABLE_TAG"
+            exit 1
+        fi
+        if [ "$CURRENT_VERSION" != "$CURRENT_FUNCTIONS_VERSION" ] || [ "$CURRENT_VERSION" != "$README_CURRENT_VERSION" ] || [ "$CURRENT_FUNCTIONS_VERSION" != "$README_CURRENT_VERSION" ]; then
+            echo "Version mismatch between style.css, functions.php, and readme.txt"
+            echo "style.css: $CURRENT_VERSION"
+            echo "functions.php: $CURRENT_FUNCTIONS_VERSION"
+            echo "readme.txt: $README_CURRENT_VERSION"
+            exit 1
+        fi
+        echo "Version mismatch between style.css, functions.php, and readme.txt"
+        echo "style.css: $CURRENT_VERSION"
+        echo "functions.php: $CURRENT_FUNCTIONS_VERSION"
+        echo "readme.txt: $README_CURRENT_VERSION"
+        echo "RELEASE_VERSION=$CURRENT_VERSION" >> $GITHUB_ENV
+
+    - name: Check if tag exists
+      run: |
+        if git show-ref --tags "refs/tags/${{ env.RELEASE_VERSION }}" --quiet; then
+            echo "Tag ${{ env.RELEASE_VERSION }} already exists. Skipping release."
+            exit 1
+            echo "TAG_EXISTS=true" >> $GITHUB_ENV
+        else
+            echo "TAG_EXISTS=false" >> $GITHUB_ENV
+        fi
+
+    - name: Zip Repo Contents
+      if: env.TAG_EXISTS == 'false'
+      run: |
+        zip -r hello-theme-child.zip . -x "*.git*" "*.gitattributes*" "*.github*" "*.gitignore*" "*.DS_Store*" "*.editorconfig*" "*.gitmodules*" "*.vscode*" "*.idea" "README.md"
+
+    - name: Push Tag
+      if: env.TAG_EXISTS == 'false'
+      run: |
+          git tag ${{ env.RELEASE_VERSION }}
+          git push origin ${{ env.RELEASE_VERSION }}
+
+    - name: Create Release
+      if: env.TAG_EXISTS == 'false'
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: hello-theme-child.zip
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ env.RELEASE_VERSION }}
+        name: Release ${{ env.RELEASE_VERSION }}
+        body: |
+          Release ${{ env.RELEASE_VERSION }}
